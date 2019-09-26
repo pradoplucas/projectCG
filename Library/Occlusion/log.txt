@@ -1,0 +1,19 @@
+[12:22:26] INFO: Umbra 3 Optimizer version 3.3.22  (build: aa99894236119ba2e0eac5ca04d0133b3067a375)
+[12:22:26] INFO: T: 20 O: 5 H: 0.25 B: 100
+[12:22:26] INFO: Tile grid 8x8x8 (at -4,-4,-4) created for scene: 8 tiles (0 empties not included) in 0.002 seconds
+[12:22:26] INFO: Using 4 threads to compute 8 tiles, cache 4096 MB
+[12:22:26] INFO: Tile processing complete, computed 8 tiles
+[12:22:26] INFO: Strict view volumes: no
+[12:22:26] INFO: Filtered 0/4 inside clusters
+[12:22:26] INFO: Filtered 0/4 global clusters
+[12:22:26] INFO: 18/18 cells reachable after global analysis
+[12:22:26] INFO: collapsed leaf tiles 8 => 1
+[12:22:26] INFO: Generating LOD tiles using 4 threads
+[12:22:26] INFO: Connecting LOD tiles
+[12:22:26] INFO: Compressing lists
+[12:22:26] INFO: Average index range size: 54.71
+[12:22:26] INFO: object list: 32 B, cluster list: 0 B
+[12:22:26] INFO: created tome with 1 tiles, 105 targets and 0 gates
+[12:22:26] INFO: Checking cache...
+[12:22:26] INFO: Cache check finished
+[12:22:26] DEBUG: Total allocations 9837, peak 248 (size 517 kB 1019 B)

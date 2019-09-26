@@ -1,0 +1,255 @@
+fileFormatVersion: 2
+guid: cf425cb994176da40b216d9792f28a16
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f0000004000000041000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 77e835ca97b8586100eb948437a7f302
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -1.1307849, y: 0.52534276, z: 0.7145459}
+      lookAt: {x: 2.0430865, y: -0.1032502, z: -0.18714647}
+      up: {x: 0.1800232, y: 0.9823319, z: -0.051144335}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Center Bubble
+    100004: Center Bubble 1
+    100006: Center Bubble 2
+    100008: Center Bubble 3
+    100010: Center Bubble 4
+    100012: Center Bubble 5
+    100014: Corner caps
+    100016: Corner caps 1
+    100018: Corner caps 2
+    100020: Corner caps 3
+    100022: Corner caps 4
+    100024: Corner caps 5
+    100026: Corner caps 6
+    100028: Corner caps 7
+    100030: Cube body
+    100032: Cube body 1
+    100034: Cube body 2
+    100036: Cube body 3
+    100038: Cube body 4
+    100040: Cube body 5
+    100042: Edge Caps
+    100044: Edge Caps 1
+    100046: Edge Caps 10
+    100048: Edge Caps 11
+    100050: Edge Caps 2
+    100052: Edge Caps 3
+    100054: Edge Caps 4
+    100056: Edge Caps 5
+    100058: Edge Caps 6
+    100060: Edge Caps 7
+    100062: Edge Caps 8
+    100064: Edge Caps 9
+    100066: Group 1
+    400000: //RootNode
+    400002: Center Bubble
+    400004: Center Bubble 1
+    400006: Center Bubble 2
+    400008: Center Bubble 3
+    400010: Center Bubble 4
+    400012: Center Bubble 5
+    400014: Corner caps
+    400016: Corner caps 1
+    400018: Corner caps 2
+    400020: Corner caps 3
+    400022: Corner caps 4
+    400024: Corner caps 5
+    400026: Corner caps 6
+    400028: Corner caps 7
+    400030: Cube body
+    400032: Cube body 1
+    400034: Cube body 2
+    400036: Cube body 3
+    400038: Cube body 4
+    400040: Cube body 5
+    400042: Edge Caps
+    400044: Edge Caps 1
+    400046: Edge Caps 10
+    400048: Edge Caps 11
+    400050: Edge Caps 2
+    400052: Edge Caps 3
+    400054: Edge Caps 4
+    400056: Edge Caps 5
+    400058: Edge Caps 6
+    400060: Edge Caps 7
+    400062: Edge Caps 8
+    400064: Edge Caps 9
+    400066: Group 1
+    2100000: _defaultMat
+    2100002: '[Metal_Rough]'
+    2100004: '[Color_000]'
+    2100006: '[Metal_Aluminum_Anodized]'
+    2100008: pink heart
+    2100010: glow pink
+    2100012: '[0004_HotPink]'
+    2300000: Center Bubble
+    2300002: Center Bubble 1
+    2300004: Center Bubble 2
+    2300006: Center Bubble 3
+    2300008: Center Bubble 4
+    2300010: Center Bubble 5
+    2300012: Corner caps
+    2300014: Corner caps 1
+    2300016: Corner caps 2
+    2300018: Corner caps 3
+    2300020: Corner caps 4
+    2300022: Corner caps 5
+    2300024: Corner caps 6
+    2300026: Corner caps 7
+    2300028: Cube body
+    2300030: Cube body 1
+    2300032: Cube body 2
+    2300034: Cube body 3
+    2300036: Cube body 4
+    2300038: Cube body 5
+    2300040: Edge Caps
+    2300042: Edge Caps 1
+    2300044: Edge Caps 10
+    2300046: Edge Caps 11
+    2300048: Edge Caps 2
+    2300050: Edge Caps 3
+    2300052: Edge Caps 4
+    2300054: Edge Caps 5
+    2300056: Edge Caps 6
+    2300058: Edge Caps 7
+    2300060: Edge Caps 8
+    2300062: Edge Caps 9
+    3300000: Center Bubble
+    3300002: Center Bubble 1
+    3300004: Center Bubble 2
+    3300006: Center Bubble 3
+    3300008: Center Bubble 4
+    3300010: Center Bubble 5
+    3300012: Corner caps
+    3300014: Corner caps 1
+    3300016: Corner caps 2
+    3300018: Corner caps 3
+    3300020: Corner caps 4
+    3300022: Corner caps 5
+    3300024: Corner caps 6
+    3300026: Corner caps 7
+    3300028: Cube body
+    3300030: Cube body 1
+    3300032: Cube body 2
+    3300034: Cube body 3
+    3300036: Cube body 4
+    3300038: Cube body 5
+    3300040: Edge Caps
+    3300042: Edge Caps 1
+    3300044: Edge Caps 10
+    3300046: Edge Caps 11
+    3300048: Edge Caps 2
+    3300050: Edge Caps 3
+    3300052: Edge Caps 4
+    3300054: Edge Caps 5
+    3300056: Edge Caps 6
+    3300058: Edge Caps 7
+    3300060: Edge Caps 8
+    3300062: Edge Caps 9
+    4300000: Mesh Edge Caps
+    4300002: Mesh Center Bubble
+    4300004: Mesh Cube body
+    4300006: Mesh Corner caps
+    4300008: Mesh Edge Caps
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
