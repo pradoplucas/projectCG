@@ -1,0 +1,14 @@
+===============================Descrição Trabalho 2========================
+
+[OK]  1) Rotacionar (utilizando no mínimo o teclado – pode-se utilizar além do teclado, o mouse, joystick, etc) (0,5)
+[OK]  2) Transladar (utilizando no mínimo o teclado – pode-se utilizar além do teclado, o mouse, joystick, etc) (0,5)
+[OK]  3) Disparar/tocar som (0,5)
+[OK]  4) Inserir um ou mais objetos com transparência (0,5)
+[OK]  5) Inserir um ou mais objetos com espelho (0,5)
+[==]  6) Utilizar ao menos dois sistemas de partículas (fogo, nuvens, explosão, disparo de projétil, etc) (0,5)
+[==]  7) Utilizar pelo menos uma iluminação do tipo point light (0,5)
+[OK]  8) Utilizar pelo menos uma iluminação do tipo spot light (0,5)
+[==]  9) Utilizar pelo menos um material com mapeamento de texturas do tipo normal map, height map e occlusion (0,5)
+[OK]  10) Utilizar pelo menos um emissive material (0,5)
+[==]  11) Utilizar pelo menos um post processing effect (0,5)
+[OK]  12) Utilizar pelo menos um raycast (0,5)

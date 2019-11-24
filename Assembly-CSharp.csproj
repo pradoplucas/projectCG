@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\finish.cs" />
      <Compile Include="Assets\Scripts\moveController.cs" />
      <Compile Include="Assets\Scripts\moveObject.cs" />
+     <Compile Include="Assets\Scripts\portalSound.cs" />
      <Compile Include="Assets\Scripts\textCatch.cs" />
      <Compile Include="Assets\Scripts\textKey.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

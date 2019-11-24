@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Criação do Componente..
 //Para adicionar características de física no 
 //personagem sem precisar usar o RigidBody..
 [RequireComponent (typeof (CharacterController))]
 
 public class moveController : MonoBehaviour {
 
-    public bool chaveFinal;
+    //keyFinal é a variável que verifica se o 
+    //player está em posse da chave final..
+    public bool keyFinal;
+
+    //porta é uma variável que vai receber a porta
+    //que irá abrir, e portaRef é a referência que
+    //estou utilizando para verificar a distância
+    //do player para abrir a porta..
     private GameObject porta, portaRef;
     public Text textoSair;
 
     //Para controlar a câmera que vai
     //ficar "seguindo" o player..
     GameObject cameraPlayer;
+
+    //Para controlar a lanterna que o player segura..
     Light flashlight;
     //public Camera camerateste;
 
@@ -35,8 +45,15 @@ public class moveController : MonoBehaviour {
     Vector3 posCameraStand = new Vector3 (0, 0.75f, 0);
     Vector3 posCameraDown = new Vector3 (0, -0.2f, 0);
 
-    //Velocidade com que o player irá se mover..
-    public float speed, sensitivity, factor;
+    //Velocidade com que o player irá se mover, 
+    //sensibilidade do mouse e um fator para
+    //o player se abaixar e levantar de maneira
+    //mais suave..
+    private float speed, sensitivity, factor;
+
+    private int stepCount, auxStepCount;
+
+    private bool isLower;
 
     void Start () {
 
@@ -51,13 +68,20 @@ public class moveController : MonoBehaviour {
         cameraPlayer.transform.localRotation = Quaternion.identity;
         //cameraPlayer.transform.localEulerAngles = new Vector3(10, 210, 0);
 
-        chaveFinal = false;
-        speed = 3f;
+        //Inicialização das variáveis..
+        keyFinal = false;
+        speed = 1.5f;
         sensitivity = 1000f;
         factor = 3f;
         textoSair.enabled = false;
 
+        stepCount = 0;
+        auxStepCount = 10;
 
+        isLower = false;
+
+        //Encontra os GameObjects com as respectivas tags
+        //e atribui nas variáveis..
         porta = GameObject.FindWithTag ("porta");
         portaRef = GameObject.FindWithTag ("portaRef");
 
@@ -74,7 +98,11 @@ public class moveController : MonoBehaviour {
         //cameraPlayer.gameObject.SetActive(false);
         //camerateste.gameObject.SetActive(true);
 
+        //Deixa o cusor escondido quando este está
+        //posicionado na tela do game..
         Cursor.visible = false;
+
+        //porta.transform.Rotate (0, 90, 0);
     }
 
     void Update () {
@@ -96,8 +124,12 @@ public class moveController : MonoBehaviour {
         //As duas variáveis só tem algum valor
         //quando são pressionadas as teclas
         //de movimento, caso contrário, são zero..
-        direcForward *= Input.GetAxis ("Vertical");
-        direcSide *= Input.GetAxis ("Horizontal");
+
+        float moveForward = Input.GetAxis ("Vertical");
+        float moveSide = Input.GetAxis ("Horizontal");
+
+        direcForward *= moveForward;
+        direcSide *= moveSide;
 
         //A soma dos dois vetores para determinar
         //qual a direção exata que está se movendo..
@@ -117,37 +149,55 @@ public class moveController : MonoBehaviour {
         }
 
         //"Gravidade"
-        Vector3 poss = transform.position;
+        Vector3 gravity = transform.position;
 
-        if(poss.y > 0.76f)
-            poss.y = 0.75f - poss.y;
-        else poss.y = 0;
+        //Sempre que o player se movimentar 0.01
+        //unidade em y, ele é reposicionado para baixo..
+        if(gravity.y > 0.76f)
+            gravity.y = 0.75f - gravity.y;
+        else gravity.y = 0;
 
         //Determina as direções..
-        moveDirection = new Vector3 (direcFinal.x, poss.y, direcFinal.z) * speed * Time.deltaTime;
+        moveDirection = new Vector3 (direcFinal.x, gravity.y, direcFinal.z) * speed * Time.deltaTime;
 
         //Faz o player se mover..
         controller.Move (moveDirection);
 
-        MoveCamera ();
+        Debug.Log(moveForward);
 
-        lightUp ();
+        if(((moveForward != 0f) || (moveSide != 0f))){
+            stepCount++;
+            if(stepCount >= auxStepCount){
+                GetComponent<AudioSource>().Play();
 
-        moveCtrl ();
+                if(!isLower) stepCount = -15;
 
-        chaveFinal_ ();
+                else stepCount = -20;
+            }
+        }
+        else {
+            stepCount = 0;
+        }
+
+        Debug.Log(stepCount);
+
+        //Chama os métodos necessários..
+        MoveCamera ();      //Para mover a câmera..
+        LightUp ();         //Para ligar/desligar a lanterna
+        MoveCtrl ();        //Para se abaixar..
+        OpenKeyFinal ();    //Para abrir a porta..
     }
 
-    public void setChaveFinal (bool e) {
-        chaveFinal = e;
+    public void SetKeyFinal (bool e) {
+        keyFinal = e;
     }
 
     float ang = 0f;
 
-    void chaveFinal_ () {
+    void OpenKeyFinal () {
 
         //Debug.Log(Vector3.Distance (transform.position, portaRef.transform.position));
-        if (Vector3.Distance (transform.position, portaRef.transform.position) < 1.6f && chaveFinal) {
+        if (Vector3.Distance (transform.position, portaRef.transform.position) < 1.6f && keyFinal) {
             textoSair.enabled = true;
 
             if (Input.GetKey ("e")) {
@@ -156,7 +206,7 @@ public class moveController : MonoBehaviour {
                 if (ang > 3f) {
                     ang = 3f;
                     textoSair.enabled = false;
-                    chaveFinal = false;
+                    keyFinal = false;
                 }
 
                 Debug.Log(ang);
@@ -173,7 +223,7 @@ public class moveController : MonoBehaviour {
     bool estado = true;
     int aux = 1;
 
-    void lightUp () {
+    void LightUp () {
         float actF = Input.GetAxis ("Flashlight");
 
         if (lastF < actF && aux == 1) {
@@ -190,7 +240,7 @@ public class moveController : MonoBehaviour {
     float lastCtrl = 0f, y = 0f, auxControl = 2;
 
     //Movimento de abaixar e levantar..
-    void moveCtrl () {
+    void MoveCtrl () {
         //Salva o valor atual da tecla ctrl 
         //esquerdo na variável actCtrl, sendo
         //que esta varia de 0 a 1..
@@ -222,24 +272,26 @@ public class moveController : MonoBehaviour {
         //suavemente, a velocidade também é diminuida
         //quando se está abaixado..
         if (ctrl == 1f && auxControl == 1) {
+            isLower = true;
             y -= Time.deltaTime * factor;
             if (y < min) {
                 y = min;
                 auxControl = 2;
             }
             cameraPlayer.transform.localPosition = new Vector3 (0, y, 0);
-            speed = 2f;
+            speed = 1f;
             controller.height = 0.1f; //0.5f
             controller.radius = 0.1f;
             controller.center = new Vector3 (0, -0.560005f, 0); //(0, 0.30f, 0);
         } else if (ctrl == 0f && auxControl == 0){
+            isLower = false;
             y += Time.deltaTime * factor;
             if (y > max) {
                 y = max;
                 auxControl = 2;
             }
             cameraPlayer.transform.localPosition = new Vector3 (0, y, 0);
-            speed = 3f;
+            speed = 1.5f;
             controller.height = 1.5f;
             controller.radius = 0.3f;
             controller.center = new Vector3 (0, 0.08f, 0);

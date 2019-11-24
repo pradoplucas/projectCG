@@ -86,7 +86,7 @@ public class moveObject : MonoBehaviour {
         distance += Input.GetAxis ("Mouse ScrollWheel") * 5.0f;
         distance = Mathf.Clamp (distance, 1.5f, 3f);
 
-        //Cria um RB pro cubo..
+        //Atribui o RB do cubo..
         if (goRaycast) {
             rbd = goRaycast.GetComponent<Rigidbody> ();
         }

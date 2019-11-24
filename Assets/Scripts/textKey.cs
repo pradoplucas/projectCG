@@ -57,7 +57,7 @@ public class textKey : MonoBehaviour {
             SpriteRenderer sprite = GetComponent<SpriteRenderer> ();
             sprite.enabled = false;
             moveController chaves = player.GetComponent<moveController> ();
-            chaves.setChaveFinal (true);
+            chaves.SetKeyFinal (true);
         }
 
     }

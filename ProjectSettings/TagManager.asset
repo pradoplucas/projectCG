@@ -8,6 +8,7 @@ TagManager:
   - mensagem
   - porta
   - portaRef
+  - Lamp
   layers:
   - Default
   - TransparentFX

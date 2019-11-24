@@ -1,0 +1,43 @@
+Espelho com Reflection Probe
+
+1-Crie um 3D Object->QUAD e renomeio para EspelhoRP;
+2-A face opaca do QUAD � face onde o reflexo ser� projetado;
+3-Crie um material novo e renomeie para algo como Espelho_Mat;
+4-Altere as propriedades do material, atribuindo 1 (m�ximo) para Metallic e Smoothness;
+5-Arraste o material para a superf�cie do objeto QUAD;
+6-Crie um objeto Light->Reflection Probe;
+7-Posicione a esfera do Reflection Probe (RP) na superf�cie do QUAD;
+8-Altere as propriedades do RP para: Type (Realtime) Refresh Mode (Every frame) Time Slicing (No time slicing) Box Projection (Checked);
+9-Na aba Lighting, em desmarque a op��o Auto Generate (para que a Unity n�o gere os efeitos de luz a cada altera��o na cena) e use o Generate Lighting sempre que precisar visualizar os efeitos de alguma altera��o na cena;
+9-Caso queira reduzir o serrilhado das bordas dos elementos projetados no espelho, pode-se aumentar a propriedade Resolution do RP;
+
+
+Espelho com Render Texture
+
+1-Crie um 3D Object->QUAD e renomeie para EspelhoRT;
+2-A face opaca do QUAD � face onde o reflexo ser� projetado;
+3-Crie um asset Render Texture e renomeie para algo como Espelho_Tex;
+4-Crie um objeto Camera e insira na grafo da cena como filho do objeto EspelhoRT;
+5-Altere a posi��o da c�mera para (0,0,0) e depois posicione a mesma na altura e dist�ncia desejada atr�s do espelho;
+6-Caso a camera esteja com a lente voltada para a dire��o oposta do espelho, aplique uma rota��o em Y (por ex: 180);
+7-Nas propriedades do Render Texture, Altere o Wap Mode para Repeat e determine a resolu��o do Render Texture, proporcionalmente ao tamanho do Espelho, na propriedade Size;
+8-Nas propriedades da Camera, insira o objeto EspelhoRT no campo Target Texture;
+9-Arraste a Render Texture para cima do objeto EspelhoRT;
+10-Nas propriedades do EspelhoRT, altere o Shader para Unli/Texture, clique na seta � esquerda da propriedade Shader para expandir as propriedades do Shader e atribura -1 para o Tiling em X (isso ir� inverter a imagem em X);
+
+Emissive Material
+
+1-Crie um 3D Object->QUAD e renomeie para LuzEmissiva;
+2-A face opaca do QUAD � face onde o material ser� aplicado;
+3-Crie um material novo e renomeie para algo como Emissivo_Mat;
+4-Nas propriedades do material, marque a op��o Emission e escolha uma cor HDR e altere a intensidade para 1 (pode-se variar o valor para mais ou menos brilho);
+5-Selecione o objeto emissor de luz e os objetos que dever�o receber o brilho da luz emissiva e marque-os como Static nas propriedades do Inspector;
+
+Textura Transparent
+
+1-Crie um 3D Object->QUAD e renomeio para Vidro;
+2-A face opaca do QUAD � face onde o material ser� aplicado;
+3-Crie um material novo e renomeie para algo como Vidro_Mat;
+4-Atribua o material Vidro_Mat ao QUAD Vidro;
+5-Abra a caixa de sele��o de cores ao lado de Albedo e altere o canal Alpha como desejar;
+6-Nas propriedades do Vidro_Mat, altere o Rendering Mode para Transparent, altere as propriedas Metallic e Smoothness como desejar;
